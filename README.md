@@ -125,6 +125,17 @@ MSIX packaging is supported through Visual Studio. Open windows_app/CoachPadWpf.
 
 The packaging project generates placeholder logos from a base64 file during build. Replace the assets in windows_app/CoachPadWpf.Package/Assets with your branding.
 
+## One click installer EXE
+
+Use Inno Setup to build an installer EXE.
+
+1. Build the WPF app in Release x64.
+2. Open windows_app/installer/CoachPadSetup.iss in Inno Setup.
+3. Set MyAppExePath to the full path of CoachPadWpf.exe in your build output.
+4. Compile the script to produce CoachPadSetup.exe.
+
+The installer prompts for backend host and provisions settings.json in the user profile on first install.
+
 ## Privacy and crash logs
 
 The Windows app includes a Privacy and EULA window in the overlay. Crash logs are stored locally and protected with DPAPI. Use Delete all local data to remove stored summaries and logs.

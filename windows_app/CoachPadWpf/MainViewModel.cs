@@ -16,6 +16,7 @@ public sealed class MainViewModel : INotifyPropertyChanged
     private readonly SummaryStore _summaryStore = new();
     private readonly AutoStartService _autoStart = new();
     private readonly DataRetentionService _retention = new();
+    private readonly SettingsService _settingsService = new();
 
     private string _host = "127.0.0.1:8000";
     private string _connectionState = "disconnected";
@@ -31,11 +32,21 @@ public sealed class MainViewModel : INotifyPropertyChanged
     private bool _hasCameraConsent;
     private bool _startWithWindows;
     private bool _followActiveWindow;
+    private bool _isLoading;
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
     public MainViewModel()
     {
+        _isLoading = true;
+        var settings = _settingsService.LoadOrCreate();
+        _host = settings.Host;
+        _isSystemAudioEnabled = settings.IsSystemAudioEnabled;
+        _isMicEnabled = settings.IsMicEnabled;
+        _hasAudioConsent = settings.HasAudioConsent;
+        _hasCameraConsent = settings.HasCameraConsent;
+        _followActiveWindow = settings.FollowActiveWindow;
+        _startWithWindows = settings.StartWithWindows;
         _ws.MetricsReceived += metrics =>
         {
             Application.Current.Dispatcher.Invoke(() =>
@@ -61,13 +72,23 @@ public sealed class MainViewModel : INotifyPropertyChanged
         {
             _summaryText = cached;
         }
-        _startWithWindows = _autoStart.IsEnabled();
+        if (_startWithWindows)
+        {
+            _autoStart.Enable(Environment.ProcessPath ?? string.Empty);
+        }
+        _isLoading = false;
     }
 
     public string Host
     {
         get => _host;
-        set => SetProperty(ref _host, value);
+        set
+        {
+            if (SetProperty(ref _host, value))
+            {
+                PersistSettings();
+            }
+        }
     }
 
     public string ConnectionState
@@ -103,13 +124,25 @@ public sealed class MainViewModel : INotifyPropertyChanged
     public bool HasAudioConsent
     {
         get => _hasAudioConsent;
-        set => SetProperty(ref _hasAudioConsent, value);
+        set
+        {
+            if (SetProperty(ref _hasAudioConsent, value))
+            {
+                PersistSettings();
+            }
+        }
     }
 
     public bool HasCameraConsent
     {
         get => _hasCameraConsent;
-        set => SetProperty(ref _hasCameraConsent, value);
+        set
+        {
+            if (SetProperty(ref _hasCameraConsent, value))
+            {
+                PersistSettings();
+            }
+        }
     }
 
     public bool StartWithWindows
@@ -119,6 +152,7 @@ public sealed class MainViewModel : INotifyPropertyChanged
         {
             if (SetProperty(ref _startWithWindows, value))
             {
+                PersistSettings();
                 if (value)
                 {
                     _autoStart.Enable(Environment.ProcessPath ?? string.Empty);
@@ -134,19 +168,37 @@ public sealed class MainViewModel : INotifyPropertyChanged
     public bool FollowActiveWindow
     {
         get => _followActiveWindow;
-        set => SetProperty(ref _followActiveWindow, value);
+        set
+        {
+            if (SetProperty(ref _followActiveWindow, value))
+            {
+                PersistSettings();
+            }
+        }
     }
 
     public bool IsSystemAudioEnabled
     {
         get => _isSystemAudioEnabled;
-        set => SetProperty(ref _isSystemAudioEnabled, value);
+        set
+        {
+            if (SetProperty(ref _isSystemAudioEnabled, value))
+            {
+                PersistSettings();
+            }
+        }
     }
 
     public bool IsMicEnabled
     {
         get => _isMicEnabled;
-        set => SetProperty(ref _isMicEnabled, value);
+        set
+        {
+            if (SetProperty(ref _isMicEnabled, value))
+            {
+                PersistSettings();
+            }
+        }
     }
 
     public Visibility IsRecordingVisible
@@ -249,6 +301,26 @@ public sealed class MainViewModel : INotifyPropertyChanged
     {
         _retention.DeleteAll();
         SummaryText = "No summary yet";
+        _settingsService.Delete();
+    }
+
+    private void PersistSettings()
+    {
+        if (_isLoading)
+        {
+            return;
+        }
+        var settings = new AppSettings
+        {
+            Host = Host,
+            IsSystemAudioEnabled = IsSystemAudioEnabled,
+            IsMicEnabled = IsMicEnabled,
+            HasAudioConsent = HasAudioConsent,
+            HasCameraConsent = HasCameraConsent,
+            StartWithWindows = StartWithWindows,
+            FollowActiveWindow = FollowActiveWindow
+        };
+        _settingsService.Save(settings);
     }
 
     private bool SetProperty<T>(ref T field, T value, [CallerMemberName] string? name = null)

@@ -1,0 +1,9 @@
+{
+  "Host": "127.0.0.1:8000",
+  "IsSystemAudioEnabled": true,
+  "IsMicEnabled": true,
+  "HasAudioConsent": false,
+  "HasCameraConsent": false,
+  "StartWithWindows": false,
+  "FollowActiveWindow": true
+}
