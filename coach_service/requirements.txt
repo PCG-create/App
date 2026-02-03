@@ -1,0 +1,12 @@
+fastapi==0.115.6
+uvicorn[standard]==0.30.6
+websockets==12.0
+pydantic==2.9.2
+numpy==2.0.2
+sentence-transformers==3.0.1
+faiss-cpu==1.8.0
+torch==2.4.1
+transformers==4.44.2
+vosk==0.3.45
+mediapipe==0.10.14
+opencv-python-headless==4.10.0.84

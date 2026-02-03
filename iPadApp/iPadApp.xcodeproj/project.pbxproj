@@ -1,0 +1,270 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1B2C3D4E5F6A701A1B2C3D4 /* iPadAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A701A1B2C3D5 /* iPadAppApp.swift */; };
+		A1B2C3D4E5F6A701A1B2C3D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A701A1B2C3D7 /* ContentView.swift */; };
+		A1B2C3D4E5F6A701A1B2C3D8 /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A701A1B2C3D9 /* WebSocketClient.swift */; };
+		A1B2C3D4E5F6A701A1B2C3DA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A701A1B2C3DB /* Models.swift */; };
+		A1B2C3D4E5F6A701A1B2C3F1 /* AudioStreamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A701A1B2C3F2 /* AudioStreamer.swift */; };
+		A1B2C3D4E5F6A701A1B2C3F3 /* CameraStreamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A701A1B2C3F4 /* CameraStreamer.swift */; };
+		A1B2C3D4E5F6A701A1B2C3F5 /* OutcomeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A701A1B2C3F6 /* OutcomeClient.swift */; };
+		A1B2C3D4E5F6A701A1B2C3F7 /* SummaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A701A1B2C3F8 /* SummaryStore.swift */; };
+		A1B2C3D4E5F6A701A1B2C3F9 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A701A1B2C3FA /* ShareSheet.swift */; };
+		A1B2C3D4E5F6A701A1B2C3DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A701A1B2C3DD /* Assets.xcassets */; };
+		A1B2C3D4E5F6A701A1B2C3DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A701A1B2C3DF /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1B2C3D4E5F6A701A1B2C3E0 /* iPadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = iPadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D4E5F6A701A1B2C3D5 /* iPadAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadAppApp.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A701A1B2C3D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A701A1B2C3D9 /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A701A1B2C3DB /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A701A1B2C3F2 /* AudioStreamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStreamer.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A701A1B2C3F4 /* CameraStreamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraStreamer.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A701A1B2C3F6 /* OutcomeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeClient.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A701A1B2C3F8 /* SummaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryStore.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A701A1B2C3FA /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A701A1B2C3E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A701A1B2C3DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A701A1B2C3DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B2C3D4E5F6A701A1B2C3E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1B2C3D4E5F6A701A1B2C3E3 /* iPadApp */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6A701A1B2C3D5 /* iPadAppApp.swift */,
+				A1B2C3D4E5F6A701A1B2C3D7 /* ContentView.swift */,
+				A1B2C3D4E5F6A701A1B2C3D9 /* WebSocketClient.swift */,
+				A1B2C3D4E5F6A701A1B2C3DB /* Models.swift */,
+				A1B2C3D4E5F6A701A1B2C3F2 /* AudioStreamer.swift */,
+				A1B2C3D4E5F6A701A1B2C3F4 /* CameraStreamer.swift */,
+				A1B2C3D4E5F6A701A1B2C3F6 /* OutcomeClient.swift */,
+				A1B2C3D4E5F6A701A1B2C3F8 /* SummaryStore.swift */,
+				A1B2C3D4E5F6A701A1B2C3FA /* ShareSheet.swift */,
+				A1B2C3D4E5F6A701A1B2C3DD /* Assets.xcassets */,
+				A1B2C3D4E5F6A701A1B2C3E4 /* Preview Content */,
+				A1B2C3D4E5F6A701A1B2C3E1 /* Info.plist */,
+			);
+			path = iPadApp;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6A701A1B2C3E4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6A701A1B2C3DF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6A701A1B2C3E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6A701A1B2C3E0 /* iPadApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6A701A1B2C3E6 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6A701A1B2C3E3 /* iPadApp */,
+				A1B2C3D4E5F6A701A1B2C3E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B2C3D4E5F6A701A1B2C3E7 /* iPadApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3D4E5F6A701A1B2C3E8 /* Build configuration list for PBXNativeTarget "iPadApp" */;
+			buildPhases = (
+				A1B2C3D4E5F6A701A1B2C3E9 /* Sources */,
+				A1B2C3D4E5F6A701A1B2C3E2 /* Frameworks */,
+				A1B2C3D4E5F6A701A1B2C3EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPadApp;
+			productName = iPadApp;
+			productReference = A1B2C3D4E5F6A701A1B2C3E0 /* iPadApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B2C3D4E5F6A701A1B2C3EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A1B2C3D4E5F6A701A1B2C3E7 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = A1B2C3D4E5F6A701A1B2C3EC /* Build configuration list for PBXProject "iPadApp" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1B2C3D4E5F6A701A1B2C3E6 /* Root */;
+			productRefGroup = A1B2C3D4E5F6A701A1B2C3E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C3D4E5F6A701A1B2C3E7 /* iPadApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B2C3D4E5F6A701A1B2C3EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F6A701A1B2C3DC /* Assets.xcassets in Resources */,
+				A1B2C3D4E5F6A701A1B2C3DE /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B2C3D4E5F6A701A1B2C3E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F6A701A1B2C3D4 /* iPadAppApp.swift in Sources */,
+				A1B2C3D4E5F6A701A1B2C3D6 /* ContentView.swift in Sources */,
+				A1B2C3D4E5F6A701A1B2C3D8 /* WebSocketClient.swift in Sources */,
+				A1B2C3D4E5F6A701A1B2C3DA /* Models.swift in Sources */,
+				A1B2C3D4E5F6A701A1B2C3F1 /* AudioStreamer.swift in Sources */,
+				A1B2C3D4E5F6A701A1B2C3F3 /* CameraStreamer.swift in Sources */,
+				A1B2C3D4E5F6A701A1B2C3F5 /* OutcomeClient.swift in Sources */,
+				A1B2C3D4E5F6A701A1B2C3F7 /* SummaryStore.swift in Sources */,
+				A1B2C3D4E5F6A701A1B2C3F9 /* ShareSheet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1B2C3D4E5F6A701A1B2C3ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = iPadApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CoachPad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = iphoneos iphonesimulator;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		A1B2C3D4E5F6A701A1B2C3EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = iPadApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CoachPad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = iphoneos iphonesimulator;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		A1B2C3D4E5F6A701A1B2C3EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CoachPad;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		A1B2C3D4E5F6A701A1B2C3F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CoachPad;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B2C3D4E5F6A701A1B2C3E8 /* Build configuration list for PBXNativeTarget "iPadApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4E5F6A701A1B2C3ED /* Debug */,
+				A1B2C3D4E5F6A701A1B2C3EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3D4E5F6A701A1B2C3EC /* Build configuration list for PBXProject "iPadApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4E5F6A701A1B2C3EF /* Debug */,
+				A1B2C3D4E5F6A701A1B2C3F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1B2C3D4E5F6A701A1B2C3EB /* Project object */;
+}
