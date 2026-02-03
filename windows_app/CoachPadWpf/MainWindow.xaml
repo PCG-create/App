@@ -1,0 +1,101 @@
+<Window x:Class="CoachPadWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CoachPad Overlay" Width="420" Height="640"
+        ResizeMode="CanResizeWithGrip" WindowStyle="None" AllowsTransparency="True"
+        Background="{StaticResource OverlayBackground}" Topmost="True">
+    <Border CornerRadius="12" Background="{StaticResource OverlayBackground}" Padding="12">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <DockPanel>
+                <TextBlock Text="CoachPad" FontSize="18" FontWeight="SemiBold" DockPanel.Dock="Left" />
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Spacing="8">
+                    <Ellipse Width="10" Height="10" Fill="{StaticResource RecordingColor}" Visibility="{Binding IsRecordingVisible}" />
+                    <Button Content="Collapse" Click="OnToggleCollapse" />
+                    <Button Content="Hide" Click="OnHide" />
+                </StackPanel>
+            </DockPanel>
+
+            <ScrollViewer Grid.Row="1">
+                <StackPanel Spacing="12" Margin="0,12,0,0">
+                    <Border Background="{StaticResource CardBackground}" CornerRadius="10" Padding="10">
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="Connection" FontWeight="SemiBold" />
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBox Width="200" Text="{Binding Host, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Content="Connect" Click="OnConnect" />
+                                <Button Content="Disconnect" Click="OnDisconnect" />
+                            </StackPanel>
+                            <TextBlock Text="{Binding ConnectionState}" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="{StaticResource CardBackground}" CornerRadius="10" Padding="10">
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="Recording" FontWeight="SemiBold" />
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <CheckBox Content="System audio" IsChecked="{Binding IsSystemAudioEnabled}" />
+                                <CheckBox Content="Microphone" IsChecked="{Binding IsMicEnabled}" />
+                            </StackPanel>
+                            <Button Content="Start Coaching" Click="OnStart" />
+                            <Button Content="Stop Coaching" Click="OnStop" />
+                            <TextBlock Text="{Binding StatusMessage}" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="{StaticResource CardBackground}" CornerRadius="10" Padding="10">
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="Consent and privacy" FontWeight="SemiBold" />
+                            <CheckBox Content="I consent to audio capture" IsChecked="{Binding HasAudioConsent}" />
+                            <CheckBox Content="I consent to camera capture" IsChecked="{Binding HasCameraConsent}" />
+                            <CheckBox Content="Start with Windows" IsChecked="{Binding StartWithWindows}" />
+                            <CheckBox Content="Follow active meeting window" IsChecked="{Binding FollowActiveWindow}" />
+                            <Button Content="Privacy and EULA" Click="OnPrivacy" />
+                            <Button Content="Delete all local data" Click="OnDeleteAll" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="{StaticResource CardBackground}" CornerRadius="10" Padding="10">
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="Live Metrics" FontWeight="SemiBold" />
+                            <TextBlock Text="{Binding MetricsText}" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="{StaticResource CardBackground}" CornerRadius="10" Padding="10">
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="Say this next" FontWeight="SemiBold" />
+                            <ItemsControl ItemsSource="{Binding SayNext}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}" TextWrapping="Wrap" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="{StaticResource CardBackground}" CornerRadius="10" Padding="10">
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="Debug transcript" FontWeight="SemiBold" />
+                            <TextBox Text="{Binding DebugTranscript}" AcceptsReturn="True" Height="80" />
+                            <Button Content="Send transcript" Click="OnSendTranscript" />
+                            <Button Content="End Call" Click="OnEndCall" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="{StaticResource CardBackground}" CornerRadius="10" Padding="10">
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="Call summary" FontWeight="SemiBold" />
+                            <TextBlock Text="{Binding SummaryText}" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</Window>

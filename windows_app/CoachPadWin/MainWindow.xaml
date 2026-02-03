@@ -1,0 +1,82 @@
+<Window
+    x:Class="CoachPadWin.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CoachPadWin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="CoachPad Windows">
+
+    <ScrollViewer>
+        <StackPanel Spacing="12" Padding="20">
+            <TextBlock Text="CoachPad" FontSize="24" FontWeight="SemiBold" />
+
+            <Border Background="{ThemeResource CardBackground}" CornerRadius="12" Padding="12">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Connection" FontSize="16" FontWeight="SemiBold" />
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <TextBox Width="240" Text="{x:Bind ViewModel.Host, Mode=TwoWay}" PlaceholderText="Host" />
+                        <Button Content="Connect" Click="OnConnect" />
+                        <Button Content="Disconnect" Click="OnDisconnect" />
+                    </StackPanel>
+                    <TextBlock Text="{x:Bind ViewModel.ConnectionState}" />
+                </StackPanel>
+            </Border>
+
+            <Border Background="{ThemeResource CardBackground}" CornerRadius="12" Padding="12">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Coaching" FontSize="16" FontWeight="SemiBold" />
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <ComboBox Width="200" SelectedIndex="{x:Bind ViewModel.AudioSourceIndex, Mode=TwoWay}">
+                            <ComboBoxItem Content="Microphone" />
+                            <ComboBoxItem Content="System audio" />
+                        </ComboBox>
+                        <ToggleSwitch Header="Camera" IsOn="{x:Bind ViewModel.IsCameraEnabled, Mode=TwoWay}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <TextBlock Text="Outcome" VerticalAlignment="Center" />
+                        <ComboBox Width="200" SelectedIndex="{x:Bind ViewModel.OutcomeIndex, Mode=TwoWay}">
+                            <ComboBoxItem Content="Meeting booked" />
+                            <ComboBoxItem Content="Follow up" />
+                            <ComboBoxItem Content="Lost" />
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <Button Content="Start Coaching" Click="OnStart" />
+                        <Button Content="Stop Coaching" Click="OnStop" />
+                        <Button Content="End Call" Click="OnEndCall" />
+                    </StackPanel>
+                    <TextBlock Text="{x:Bind ViewModel.StatusMessage}" />
+                </StackPanel>
+            </Border>
+
+            <Border Background="{ThemeResource CardBackground}" CornerRadius="12" Padding="12">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Live Metrics" FontSize="16" FontWeight="SemiBold" />
+                    <TextBlock Text="{x:Bind ViewModel.MetricsText}" TextWrapping="Wrap" />
+                </StackPanel>
+            </Border>
+
+            <Border Background="{ThemeResource CardBackground}" CornerRadius="12" Padding="12">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Say this next" FontSize="16" FontWeight="SemiBold" />
+                    <ItemsControl ItemsSource="{x:Bind ViewModel.SayNext}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="x:String">
+                                <TextBlock Text="{x:Bind}" TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+
+            <Border Background="{ThemeResource CardBackground}" CornerRadius="12" Padding="12">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Call summary" FontSize="16" FontWeight="SemiBold" />
+                    <TextBlock Text="{x:Bind ViewModel.SummaryText}" TextWrapping="Wrap" />
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

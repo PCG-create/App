@@ -1,0 +1,25 @@
+<Window x:Class="CoachPadWpf.PrivacyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Privacy and EULA" Width="520" Height="640" WindowStartupLocation="CenterOwner">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Privacy and EULA" FontSize="18" FontWeight="SemiBold" />
+        <ScrollViewer Grid.Row="1" Margin="0,12,0,0">
+            <TextBlock TextWrapping="Wrap">
+Privacy Policy
+
+CoachPad processes audio and optional camera data for real time coaching. Audio and camera capture only occur when you consent and start coaching. Data is streamed to your configured backend. No third party exfiltration is enabled by default.
+
+Local data is stored on this device and encrypted with DPAPI. You can delete local data from the app.
+
+End User License Agreement
+
+This software is provided as is without warranty. You are responsible for complying with local laws, consent requirements, and your employer policies. You must inform participants when recording or analyzing calls.
+            </TextBlock>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -11,6 +11,8 @@ Production ready iPad coaching app and Python service for real time sales coachi
 - iPadApp
 	- Xcode iPad app project
 	- SwiftUI views and WebSocket client
+- windows_app
+	- Windows 11 WPF tray app and overlay
 
 ## Platform limitations
 
@@ -19,6 +21,10 @@ Production ready iPad coaching app and Python service for real time sales coachi
 - SNAPmobile cannot be modified. CallKit CXCallObserver is best effort and may not detect SNAPmobile calls.
 - Explicit microphone and camera consent is required. A clear recording indicator must be shown when capture is enabled.
 - Audio streaming requires a local Vosk model configured via VOSK_MODEL_PATH.
+- Windows system audio capture depends on WASAPI and may fail for apps using exclusive audio mode.
+- Always on top overlays are best effort and can be obscured by full screen apps.
+- The Windows app requires explicit consent to capture audio or camera. It will not start capture without consent.
+- Local summaries are encrypted with DPAPI and can be deleted from the app.
 
 ## Phase status
 
@@ -58,6 +64,17 @@ Example steps:
 
 The app uses a WebSocket connection to /ws/ui for live metrics.
 
+## Swift Playgrounds build
+
+Swift Playgrounds on iPad can run the simplified Playground app in this repo. It does not include microphone or camera capture. It can connect to the backend and send sample transcript lines.
+
+Steps:
+
+1. Open the repository in Swift Playgrounds.
+2. Open Package.swift and run the CoachPadPlayground app.
+3. Set the host to your backend and tap Connect.
+4. Tap Send sample transcript to see metrics and Say this next lines.
+
 ## Phase 1 test
 
 1. Start the Python service.
@@ -90,6 +107,28 @@ Example command:
 - Use the iPad and backend on the same network.
 - In the app, set the host to the backend IP address and port. Example: 192.168.1.10:8000
 - Start coaching. The app streams mic audio and low FPS camera frames to the backend.
+
+## Running on Windows 11
+
+The Windows WPF app runs in the system tray, shows an always on top overlay, and captures system audio and microphone audio using WASAPI. It can auto start on detection of Teams, Zoom, Google Meet, or Snapmobile WebPhone windows. It also checks active audio sessions for those processes.
+
+1. Install Visual Studio 2022 with the .NET desktop development workload.
+2. Open windows_app/CoachPadWpf.sln.
+3. Restore NuGet packages and build for x64.
+4. Run the app, then open the tray icon and Show the overlay.
+5. Grant audio consent and optionally camera consent.
+6. Set the backend host, then Start Coaching or wait for auto detection.
+
+## Windows packaging
+
+MSIX packaging is supported through Visual Studio. Open windows_app/CoachPadWpf.Package.wapproj and build to produce an MSIX package. A temporary certificate is required for local install. Replace the publisher and certificate for production.
+
+The packaging project generates placeholder logos from a base64 file during build. Replace the assets in windows_app/CoachPadWpf.Package/Assets with your branding.
+
+## Privacy and crash logs
+
+The Windows app includes a Privacy and EULA window in the overlay. Crash logs are stored locally and protected with DPAPI. Use Delete all local data to remove stored summaries and logs.
+6. Choose an outcome and select End Call to store a summary.
 
 ## Call summary
 

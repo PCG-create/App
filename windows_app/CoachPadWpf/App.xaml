@@ -1,0 +1,9 @@
+<Application x:Class="CoachPadWpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="CardBackground" Color="#F7F7F7" />
+        <SolidColorBrush x:Key="OverlayBackground" Color="#F0FFFFFF" />
+        <SolidColorBrush x:Key="RecordingColor" Color="#E53935" />
+    </Application.Resources>
+</Application>

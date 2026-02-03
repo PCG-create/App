@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34619.68
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoachPadWpf", "CoachPadWpf\CoachPadWpf.csproj", "{B0B9EFC1-83C8-45C5-9E73-0A7D7C1A0A8E}"
+EndProject
+Project("{C7167F0D-BC9B-4F1B-9571-75C8F29C1B4C}") = "CoachPadWpf.Package", "CoachPadWpf.Package\CoachPadWpf.Package.wapproj", "{D54BDBF8-93A6-4D2B-9E3C-7A46F8A0847A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0B9EFC1-83C8-45C5-9E73-0A7D7C1A0A8E}.Debug|x64.ActiveCfg = Debug|x64
+		{B0B9EFC1-83C8-45C5-9E73-0A7D7C1A0A8E}.Debug|x64.Build.0 = Debug|x64
+		{B0B9EFC1-83C8-45C5-9E73-0A7D7C1A0A8E}.Release|x64.ActiveCfg = Release|x64
+		{B0B9EFC1-83C8-45C5-9E73-0A7D7C1A0A8E}.Release|x64.Build.0 = Release|x64
+		{D54BDBF8-93A6-4D2B-9E3C-7A46F8A0847A}.Debug|x64.ActiveCfg = Debug|x64
+		{D54BDBF8-93A6-4D2B-9E3C-7A46F8A0847A}.Debug|x64.Build.0 = Debug|x64
+		{D54BDBF8-93A6-4D2B-9E3C-7A46F8A0847A}.Release|x64.ActiveCfg = Release|x64
+		{D54BDBF8-93A6-4D2B-9E3C-7A46F8A0847A}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
